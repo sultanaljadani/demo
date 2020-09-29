@@ -5,7 +5,7 @@ import About from './components/About/About'
 import Contact from './components/Contact'
 import Cart from './components/Cart'
 import Footer from './components/Footer/Footer'
-import ProductDetiles from './components/ProductDetiles'
+import ProductDetiles from './components/ProductDetiles/ProductDetiles'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {DataProvider} from './components/DataProvider'
 function App() {
