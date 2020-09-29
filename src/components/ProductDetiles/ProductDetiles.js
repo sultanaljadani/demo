@@ -1,6 +1,7 @@
 import React, { useContext} from 'react'
 import {useParams} from 'react-router-dom'
-import {DataContext} from './DataProvider'
+import {DataContext} from '../DataProvider'
+import './ProductDetiles.css'
 
 export default function ProductDetiles({match}) {
     const {id} = useParams();
