@@ -22,28 +22,7 @@ code {
 }
 
 
-ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 0 15px;
-}
-.menu{
-  display: none;
-}
-.cart-icon{
-  position: relative;
-  margin-right: 15px;
-}
-.cart-icon span{
-  background: #fadc31;
-  border-radius: 40%;
-  color: #020202;
-  position: absolute;
-  top: -9px;
-  right: -9px;
-  font-size: 12px;
-  padding: 5px;
-}
+
 .products{
   width: 100%;
   display: flex;
