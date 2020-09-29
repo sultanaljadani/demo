@@ -1,4 +1,5 @@
 import React , {useState, useContext} from 'react'
+import './Header.css'
 import Menu from '../svg/bars-solid.svg'
 import Close from '../svg/times-solid.svg'
 import ShoppingCard from '../svg/shopping-cart-solid.svg'
