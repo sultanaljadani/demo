@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import {DataContext} from './DataProvider'
+import './Products.css'
+import {DataContext} from '../DataProvider'
 import {Link} from 'react-router-dom'
 
 export default function Products() {
