@@ -5,6 +5,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 50px;
+    border-bottom: darkgrey 1px solid;
   }
   .details-cart .img-cart img{
     width: 150px;
@@ -21,7 +22,7 @@
   }
   .box-details-cart h2{
     text-transform: uppercase;
-    color: darkblue;
+    color: rgb(35, 35, 36);
     letter-spacing: 2px;
     font-size: 2rem;
   }
@@ -61,10 +62,8 @@
     background: #555;
     cursor: pointer;
   }
-  .details-cart .delete-cart{
-    position: absolute;
-    top:0;
-    right: 5px;
+  .box-delete-cart{
+    position: static;
     color: crimson;
     cursor: pointer;
     font-weight: 900;
@@ -114,7 +113,6 @@
       right: 20px;
     }
   }
-  
   @media (max-width: 500px){
     .details-cart{
       padding: 0;
@@ -123,4 +121,3 @@
       height: 350px;
     }
   }
-  
