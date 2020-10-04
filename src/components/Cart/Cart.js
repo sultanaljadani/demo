@@ -3,7 +3,7 @@ import {DataContext} from '../DataProvider'
 import './Cart.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
 export default function Cart() {
     const value = useContext(DataContext)
     const [cart, setCart] = value.cart
@@ -55,9 +55,12 @@ export default function Cart() {
                        cart.map(product =>(
                            <div className="details-cart" key={product._id}>
                                <div className="img-cart">
+                               <Link to={`/productDetiles/${product._id}`}>
                                     <img src={product.images[0]} alt="Product01"/>
+                                    </Link>
                                </div>
                                <div className="box-details-cart">
+                                   
                                    <h2 title={product.title}>{product.title}</h2>
                                    <h3>${product.price}</h3>
                                    <p>{product.description}</p>
@@ -70,8 +73,10 @@ export default function Cart() {
                                             <FontAwesomeIcon icon={faPlus}/>
                                         </button>
                                     </div>
-                                    <div className="delete-cart" onClick={() => removeProduct(product._id)}>
-                                        <FontAwesomeIcon icon={faTimes}/>
+                               </div>
+                               <div className="box-delete-cart">
+                                    <div className="delete-cart" onClick={() => removeProduct(product._id)} title="Delete product">
+                                            <FontAwesomeIcon icon={faTrash}/>
                                     </div>
                                </div>
                            </div>
