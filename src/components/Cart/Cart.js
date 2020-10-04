@@ -20,26 +20,27 @@ export default function Cart() {
         getTotal()
     },[cart])
 
-    function reduction(id) {
-        cart.map(item => {
-            if (item._id === id) {
-                item.count === 1 ? item.count = 1 : item.count -= 1
+    const reduction = id => {
+        cart.forEach(item =>{
+            if(item._id === id){
+                item.count === 1 ? item.count = 1 : item.count -= 1;
             }
         })
         setCart([...cart])
     }
-    function increase(id) {
-        cart.map(item => {
-            if (item._id === id) {
-                item.count += 1
+    const increase = id => {
+        cart.forEach(item =>{
+            if(item._id === id){
+                item.count += 1 ;
             }
         })
         setCart([...cart])
     }
-    function removeProduct(id) {
-        if (window.confirm("Do you want to delete this product?")) {
-            cart.map((item, index) => {
-                if (item._id === id) {
+
+    const removeProduct = id => {
+        if(window.confirm("Do you want to delete this product?")){
+            cart.forEach((item, index) => {
+                if(item._id === id){
                     cart.splice(index, 1)
                 }
             })
