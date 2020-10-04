@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './Products.css'
 import {DataContext} from '../DataProvider'
 import {Link} from 'react-router-dom'
+import ProductsFilter from './ProductsFilter/ProductsFilter'
 
 export default function Products() {
   const value = useContext(DataContext)
@@ -9,6 +10,7 @@ export default function Products() {
   const addCart = value.addCart
     return (
         <div className="products">
+          <ProductsFilter />
           {
             products.map(product => (
               <div className="card" key={product._id}>
