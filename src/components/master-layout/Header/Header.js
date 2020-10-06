@@ -34,7 +34,9 @@ export default function Header() {
             <ul style={styleMenu}>
                 <li><Link to="/products">Products</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>                
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/login">log in</Link></li>
+                <li><Link to="/registertion">Sign up</Link></li>                
                 <li>
                     <img src={Close} alt="" width="30" className="menu" />
                 </li>
