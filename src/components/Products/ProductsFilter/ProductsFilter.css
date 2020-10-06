@@ -1,0 +1,16 @@
+.filter{
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+  }
+  ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+  }

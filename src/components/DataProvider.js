@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 
 export const DataContext = createContext();
 export const DataProvider = (props) => {
@@ -80,6 +80,11 @@ export const DataProvider = (props) => {
             "position": "Team Leader of UI" 
         }
     ])
+
+    useEffect(() => {
+        localStorage.setItem('dataCart', JSON.stringify(cart))
+    },[cart])
+
     const addCart = (id) => {
         const check = cart.every(item => {
             return item._id !== id
