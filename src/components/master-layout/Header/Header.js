@@ -1,11 +1,11 @@
 import React , {useState, useContext} from 'react'
 import './Header.css'
-import Menu from '../svg/bars-solid.svg'
-import Close from '../svg/times-solid.svg'
-import ShoppingCard from '../svg/shopping-cart-solid.svg'
-import HeaderLogo from '../../img/techshoplogo.png'
+import Menu from '../../svg/bars-solid.svg'
+import Close from '../../svg/times-solid.svg'
+import ShoppingCard from '../../svg/shopping-cart-solid.svg'
+import HeaderLogo from '../../../img/techshoplogo.png'
 import {Link} from 'react-router-dom'
-import {DataContext} from '../DataProvider'
+import {DataContext} from '../../DataProvider'
 
 export default function Header() {
     const [menu, setMenu] = useState(false)
@@ -26,7 +26,7 @@ export default function Header() {
             </div>
                 <div className="logo">
                         <h1>
-                            <Link to="/products">
+                            <Link to="/">
                                 <img src={HeaderLogo} alt="" height="70"/>
                             </Link>
                         </h1>
@@ -34,7 +34,9 @@ export default function Header() {
             <ul style={styleMenu}>
                 <li><Link to="/products">Products</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/about">About</Link></li>                
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/login">log in</Link></li>
+                <li><Link to="/registertion">Sign up</Link></li>                
                 <li>
                     <img src={Close} alt="" width="30" className="menu" />
                 </li>
