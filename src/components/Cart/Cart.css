@@ -121,3 +121,8 @@
       height: 350px;
     }
   }
+  .cart-alert{
+    text-align: center;
+    text-transform: uppercase;
+    
+  }
