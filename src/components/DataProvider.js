@@ -63,21 +63,26 @@ export const DataProvider = (props) => {
             "__id": "001",
             "image": ["https://drive.uqu.edu.sa/up/avatar/440/sjjadani.png"],
             "name": "Sultan Aljadani",
-            "position": "UI / UX"
+            "position": "UI / UX",
+            "twitter_account": "___7rb"
              
         },
         {
             "__id": "002",
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/ahalasmari.png"],
             "name": "Abdulrhman Alasmari",
-            "position": "UI / UX"
+            "position": "UI / UX",
+            "twitter_account": "abdulrhmanalasmari"
+
              
         },
         {
             "__id": "003",
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/asazzahrani.png"],
             "name": "Abdullah Alzhrani",
-            "position": "Team Leader of UI" 
+            "position": "Team Leader of UI",
+            "twitter_account": "abdullahsal"
+
         }
     ])
     const addCart = (id) => {
