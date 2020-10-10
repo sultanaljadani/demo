@@ -10,16 +10,6 @@ export default function Contact() {
           span: 8,
         },
       };
-      const validateMessages = {
-        required: '${label} is required!',
-        types: {
-          email: '${label} is not validate email!',
-          number: '${label} is not a validate number!',
-        },
-        number: {
-          range: '${label} must be between ${min} and ${max}',
-        },
-      };
       const prefixSelector = (
         <Form.Item name="prefix" noStyle>
           <Select
@@ -27,7 +17,7 @@ export default function Contact() {
               width: 80,
             }}>
             <Option value="966">+966</Option>
-            //you can add more option here like key countries +___
+            {/* you can add more option here like key countries +___ */}
           </Select>
         </Form.Item>
       );
@@ -43,7 +33,7 @@ export default function Contact() {
             subTitle="This is a subtitle"
             tags={<Tag color="#97d068">Running</Tag>}
         />
-            <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+            <Form {...layout} name="nest-messages" onFinish={onFinish} >
                 <Form.Item
                     name={['user', 'name']}
                     label="Full Name"
@@ -101,4 +91,4 @@ export default function Contact() {
             </Form>
         </>
     )
-}
+} 
