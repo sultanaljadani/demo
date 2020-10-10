@@ -26,7 +26,7 @@ export default function Header() {
             </div>
                 <div className="logo">
                         <h1>
-                            <Link to="/products">
+                            <Link to="/">
                                 <img src={HeaderLogo} alt="" height="70"/>
                             </Link>
                         </h1>
