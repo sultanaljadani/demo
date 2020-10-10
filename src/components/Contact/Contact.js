@@ -29,9 +29,9 @@ export default function Contact() {
         <PageHeader
             className="site-page-header"
             onBack={() => window.history.back()}
-            title="Title"
-            subTitle="This is a subtitle"
-            tags={<Tag color="#97d068">Running</Tag>}
+            title="Back"
+            subTitle="Contact Form"
+            tags={<Tag color="#97d068">Contact</Tag>}
         />
             <Form {...layout} name="nest-messages" onFinish={onFinish} >
                 <Form.Item
