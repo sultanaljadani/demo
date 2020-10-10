@@ -1,6 +1,7 @@
 import React, { useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import {DataContext} from '../DataProvider'
+import { PageHeader, Tag} from 'antd';
 import './ProductDetiles.css'
 
 export default function ProductDetiles({match}) {
@@ -13,7 +14,14 @@ export default function ProductDetiles({match}) {
     } )
     console.log(productDetiles)
     return (
-        <div>
+        <>
+            <PageHeader
+                 className="site-page-header"
+                 onBack={() => window.history.back()}
+                 title="Back"
+                 subTitle="Mobile Detils"
+                 tags={<Tag color="blue">info</Tag>}
+                />
              {
                  productDetiles.map(product => (
                      <div className="products" key={product._id}>
@@ -32,6 +40,6 @@ export default function ProductDetiles({match}) {
                      </div>
                  ))
              }
-        </div>
+        </>
     )
 }
