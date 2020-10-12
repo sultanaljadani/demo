@@ -3,7 +3,11 @@ import {DataContext} from '../DataProvider'
 import './Cart.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { DeleteOutlined } from '@ant-design/icons';
+import { Tag, message } from 'antd';
+
+
 export default function Cart() {
     const value = useContext(DataContext)
     const [cart, setCart] = value.cart
@@ -33,16 +37,25 @@ export default function Cart() {
         })
         setCart([...cart])
     }
+    
     const removeProduct = id => {
         if(window.confirm("Do you want to delete this product?")){
             cart.forEach((item, index) => {
                 if(item._id === id){
+                    message
+                    .loading('in progress..', 1)
+                    .then(() => message.success('The Product has been deleted !', 2.2))
                     cart.splice(index, 1)
                 }
+
             })
             setCart([...cart])
+        }else{
+            message.error('The Product was not deleted !');
         }
     }
+
+
     if(cart.length === 0)
         return <h2  className="cart-alert">Cart is Empty</h2>
     return (
@@ -61,17 +74,17 @@ export default function Cart() {
                                     <p>{product.description}</p>
                                     <div className="amount-cart">
                                             <button className="count-cart" onClick={() => reduction(product._id)}>
-                                                <FontAwesomeIcon icon={faMinus}/>
+                                            <FontAwesomeIcon icon={faMinus}/>
                                             </button>
                                                 <span>{product.count}</span>
                                             <button className="count-cart" onClick={() => increase(product._id)}>
-                                                <FontAwesomeIcon icon={faPlus}/>
+                                            <FontAwesomeIcon icon={faPlus}/>
                                             </button>
                                         </div>
                                 </div>
                                <div className="box-delete-cart">
                                     <div className="delete-cart" onClick={() => removeProduct(product._id)} title="Delete product">
-                                            <FontAwesomeIcon icon={faTrash}/>
+                                        <DeleteOutlined style={{fontSize:"20px"}}/>
                                     </div>
                                </div>
                            </div>
@@ -79,7 +92,7 @@ export default function Cart() {
                    }
                    <div className="total-cart">
                        <Link to="/checkout">Checkout</Link>
-                       <h3>Total: $ {total}</h3>
+                       <h3>Total: $ <Tag color="red" style={{textAlign: "center"}}>{total}</Tag></h3>
                    </div>
                 </>
             )
