@@ -1,0 +1,39 @@
+.site-layout-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 280px;
+  }
+  #components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
+  /*********************** Header ********************/
+header{
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+  }
+  
+  .cart-icon{
+    position: relative;
+    margin-right: 15px;
+  }
+  .cart-icon span{
+    background: #fadc31;
+    border-radius: 40%;
+    color: #020202;
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    font-size: 12px;
+    padding: 5px;
+  }
