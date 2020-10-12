@@ -19,7 +19,7 @@ export default function About() {
             <h2 className="title-page">Team Awesome</h2>
             {
             about.map(about => (
-                <Row justify="center" align="middle">
+                <Row align="middle" justify="space-around" key={about.__id} gutter="vertical">
                     <Col span={8}>
                         <Card key={about.__id}
                             bordered={true}
@@ -27,7 +27,7 @@ export default function About() {
                             actions={[
                             <CodeSandboxOutlined key="codesandbox" href=''/>,
                             <GithubOutlined key="github" />,
-                            <TwitterCircleFilled key="twitter" title={about.twitter_account}/>,
+                            <TwitterCircleFilled key="twitter" title={about.twitter_account}  />,
                             ]}>
                             <Meta
                             avatar={<Avatar size={64} src={about.image[0]} />}

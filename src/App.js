@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import ProductDetiles from './components/ProductDetiles/ProductDetiles'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {DataProvider} from './components/DataProvider'
+
 function App() {
   return (
     <DataProvider>

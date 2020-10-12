@@ -31,8 +31,7 @@ export default function Contact() {
             onBack={() => window.history.back()}
             title="Back"
             subTitle="Contact Form"
-            tags={<Tag color="#97d068">Contact</Tag>}
-        />
+            tags={<Tag color="#97d068">Contact</Tag>} />
             <Form {...layout} name="nest-messages" onFinish={onFinish} >
                 <Form.Item
                     name={['user', 'name']}
@@ -57,13 +56,7 @@ export default function Contact() {
                 </Form.Item>
                 <Form.Item
                     name="phone"
-                    label="Phone Number"
-                    rules={[
-                    {
-                        required: true,
-                        message: 'Please input your phone number!',
-                    },
-                    ]}>
+                    label="Phone Number">
                     <Input
                     addonBefore={prefixSelector}
                     style={{
@@ -74,12 +67,6 @@ export default function Contact() {
                 <Form.Item 
                     name={['user', 'Message']} 
                     label="Message"
-                    rules={[
-                        {
-                            required: true,
-                            message: ' Please fill your message here'
-                        }
-                    ]}
                 >
                     <Input.TextArea />
                 </Form.Item>
