@@ -32,7 +32,7 @@ export default function About() {
                                         actions={[
                                             <CodeSandboxOutlined key="codesandbox" href=''/>,
                                             <GithubOutlined key="github" />,
-                                            <TwitterCircleFilled key="twitter" title={about.twitter_account}  />,
+                                            <TwitterCircleFilled key="twitter" title={about.twitter_account}  color="#039dfc"/>,
                                             ]}>
                                             <Meta
                                                 avatar={<Avatar size={64} src={about.image[0]} />}

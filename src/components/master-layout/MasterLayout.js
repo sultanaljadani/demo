@@ -21,7 +21,7 @@ export default function MasterLayout() {
             <Layout className="layout">
                 <Header>
                     <div className="logo">
-                        <a title="Home Page">
+                        <a title="Home Page" href="/products">
                             <h2 style={{color: "white"}}>TECHSHOP</h2>
                         </a>
                     </div>

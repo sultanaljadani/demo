@@ -7,7 +7,6 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { DeleteOutlined } from '@ant-design/icons';
 import { Tag, message } from 'antd';
 
-
 export default function Cart() {
     const value = useContext(DataContext)
     const [cart, setCart] = value.cart
@@ -37,7 +36,6 @@ export default function Cart() {
         })
         setCart([...cart])
     }
-    
     const removeProduct = id => {
         if(window.confirm("Do you want to delete this product?")){
             cart.forEach((item, index) => {
@@ -47,15 +45,12 @@ export default function Cart() {
                     .then(() => message.success('The Product has been deleted !', 2.2))
                     cart.splice(index, 1)
                 }
-
             })
             setCart([...cart])
         }else{
             message.error('The Product was not deleted !');
         }
     }
-
-
     if(cart.length === 0)
         return <h2  className="cart-alert">Cart is Empty</h2>
     return (
