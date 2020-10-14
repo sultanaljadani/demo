@@ -55,7 +55,25 @@ export const DataProvider = ({children}) => {
              "price": 299,
              "count": 1
 
-         }
+         },
+         {
+            "_id": "7",
+            "title": "Apple iPhone 5s",
+            "images": ["https://media.extra.com/i/aurora/00193195_100_02?w=400&h=400&img404=missing_product&v=false"],
+            "description": "iPhone 5s is powered by the custom-designed 64-bit A9 chip. It delivers performance once found only in desktop computers.",
+            "price": 199,
+            "count": 1
+
+        },
+        {
+            "_id": "8",
+            "title": "Apple iPhone 4s",
+            "images": ["https://media.extra.com/i/aurora/00193195_100_02?w=400&h=400&img404=missing_product&v=false"],
+            "description": "iPhone 4s is powered by the custom-designed 64-bit A9 chip. It delivers performance once found only in desktop computers.",
+            "price": 99,
+            "count": 1
+
+        }
     ])
     const [cart, setCart] = useState([])
     const [about, setAbout] = useState([
