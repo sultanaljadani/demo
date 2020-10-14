@@ -1,8 +1,10 @@
 import React, { useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import {DataContext} from '../DataProvider'
-import { PageHeader, Tag} from 'antd';
+import { PageHeader, Tag, Button} from 'antd';
 import './ProductDetiles.css'
+import {VatText, PriceText} from '../../styled'
+
 
 export default function ProductDetiles({match}) {
     const {id} = useParams();
@@ -29,11 +31,12 @@ export default function ProductDetiles({match}) {
                             <img src={product.images[0]} alt="Product01"/>
                          <div className="box">
                              <h2 title={product.title}>{product.title}</h2>
-                             <h3>${product.price}</h3>
                              <p>{product.description}</p>
-                             <button className="cart" onClick={() => addCart(product._id)}> 
-                                Add to card
-                            </button>
+                             <PriceText> <small>SR</small>{product.price} </PriceText>
+                             <VatText>inclusive of VAT</VatText>
+                             <Button type="primary" onClick={() => addCart(product._id)} block>
+                          Add to card
+                        </Button>
                          </div>
                          
                      </div>

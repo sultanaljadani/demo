@@ -16,7 +16,7 @@ export default function About() {
         borderRadius: '10px', };
 
     const AboutHeader = styled.h2`
-        color:#039dfc;
+        color:#165eb1;
     `;
     return (
         <>
@@ -36,13 +36,13 @@ export default function About() {
                                         bordered={true}
                                         style={gridStyle}
                                         actions={[
-                                            <CodeSandboxOutlined key="codesandbox" href='' />,
-                                            <InstagramOutlined key="instagram" href='' />,
-                                            <GithubOutlined key="github" />,
+                                            <CodeSandboxOutlined key="codesandbox" href='' title={about.code_account}/>,
+                                            <InstagramOutlined key="instagram" href='' title={about.instagram_account}/>,
+                                            <GithubOutlined key="github" title={about.github_account}/>,
                                             <TwitterCircleFilled key="twitter" title={about.twitter_account}  />,
                                             ]}>
                                             <Meta
-                                                avatar={<Avatar size={64} src={about.image[0]} />}
+                                                avatar={<Avatar size={74} src={about.image[0]} />}
                                                 title={about.name}
                                                 description={about.position}/>
                                     </Card>
