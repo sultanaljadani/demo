@@ -2,7 +2,9 @@ import React , { useContext } from 'react'
 import {DataContext} from '../DataProvider'
 import {Card, Col, Row , Avatar, Tag, PageHeader} from 'antd'
 import './About.css'
-import { CodeSandboxOutlined, GithubOutlined, TwitterCircleFilled } from '@ant-design/icons';
+import { CodeSandboxOutlined, GithubOutlined, TwitterCircleFilled, InstagramOutlined } from '@ant-design/icons';
+import styled from 'styled-components'
+
 export default function About() {
     const value1 = useContext(DataContext)
     const [about] = value1.about
@@ -12,6 +14,10 @@ export default function About() {
         padding: '30px',
         margin: '10px',
         borderRadius: '10px', };
+
+    const AboutHeader = styled.h2`
+        color:#039dfc;
+    `;
     return (
         <>
             <div className="about">
@@ -21,7 +27,7 @@ export default function About() {
             title="Back"
             subTitle="Who are we ? "
             tags={<Tag color="#41a098">About us</Tag>} />
-                <h2 className="title-page">Team Awesome</h2>
+                <AboutHeader className="title-page">Team Awesome</AboutHeader>
                     <Row align="middle" justify="space-around"  gutter="horizt">
                         {
                             about.map(about => (
@@ -30,9 +36,10 @@ export default function About() {
                                         bordered={true}
                                         style={gridStyle}
                                         actions={[
-                                            <CodeSandboxOutlined key="codesandbox" href=''/>,
+                                            <CodeSandboxOutlined key="codesandbox" href='' />,
+                                            <InstagramOutlined key="instagram" href='' />,
                                             <GithubOutlined key="github" />,
-                                            <TwitterCircleFilled key="twitter" title={about.twitter_account}  color="#039dfc"/>,
+                                            <TwitterCircleFilled key="twitter" title={about.twitter_account}  />,
                                             ]}>
                                             <Meta
                                                 avatar={<Avatar size={64} src={about.image[0]} />}
