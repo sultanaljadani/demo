@@ -3,8 +3,7 @@ import './Products.css'
 import {DataContext} from '../DataProvider'
 import {Link} from 'react-router-dom'
 import {Card, Row, Col, Carousel, Divider ,Pagination , Button} from 'antd'
-import styled from 'styled-components'
-
+import {VatText, PriceText} from '../../styled'
 export default function Products() {
   const value = useContext(DataContext)
   const [products] = value.products
@@ -17,16 +16,7 @@ export default function Products() {
     display: 'block',
     objectFit: 'cover'
   };
-  const VatText = styled.p`
-    text-align:center;
-    font-size: 5px; 
-    color: #979797;
-  `;
-  const PriceText = styled.h4`
-    text-align:center;
-    font-size: 20px; 
-    color: red;
-  `;
+  
     return (
       <>
           <Carousel autoplay >
@@ -63,7 +53,7 @@ export default function Products() {
                       >
                         <Meta title={product.title} style={{textTransform: 'uppercase', letterSpacing: '2px'}}/>
                         <Meta description={product.description} />
-                        <PriceText>${product.price}</PriceText>
+                        <PriceText> <small>SR</small>{product.price} </PriceText>
                         <VatText>inclusive of VAT</VatText>
                         <Button type="primary" onClick={() => addCart(product._id)} block>
                           Add to card
