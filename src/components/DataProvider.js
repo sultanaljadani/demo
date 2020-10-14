@@ -120,7 +120,7 @@ export const DataProvider = ({children}) => {
         products:  [products, setProducts],
         cart: [cart, setCart],
         about: [about, setAbout],
-        addCart: addCart
+        addCart: addCart,
     }
     return (
         <div>

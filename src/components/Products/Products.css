@@ -60,3 +60,8 @@
    background-color: #fadc31; 
    color: #020202;
   }
+  .center {
+    margin: auto;
+    width: 20%;
+    padding: 20px;
+  }
