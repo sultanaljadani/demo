@@ -20,7 +20,7 @@ export default function Products() {
   
     return (
       <>
-          <Carousel autoplay>
+          <Carousel autoplay effect="fade">
             <div>
               <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1010-nvidia-laptops-en.jpg" />
             </div>
@@ -53,7 +53,7 @@ export default function Products() {
                       }
                       >
                         <Meta title={product.title} style={{textTransform: 'uppercase', letterSpacing: '2px'}}/>
-                        <Meta description={product.description} />
+                        <Meta description={product.description} /><br/>
                         <PriceText> <small>SR</small>{product.price} </PriceText>
                         <VatText>inclusive of VAT</VatText>
                         <Button type="primary" onClick={() => addCart(product._id)} block>
@@ -65,7 +65,7 @@ export default function Products() {
               }
           </Row>
           <div className="center">
-            <Pagination defaultCurrent={1} total={50} />
+            <Pagination defaultCurrent={1} total={8} defaultPageSize={4}/>
           </div>
     </>  
     )
