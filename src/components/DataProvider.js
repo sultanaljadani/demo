@@ -82,7 +82,10 @@ export const DataProvider = ({children}) => {
             "image": ["https://drive.uqu.edu.sa/up/avatar/440/sjjadani.png"],
             "name": "Sultan Aljadani",
             "position": "UI / UX",
-            "twitter_account": "___7rb"
+            "twitter_account": "___7rb",
+            "github_account": "sultanaljadani",
+            "instagram_account": "2sa4",
+            "code_account": "sultanaljadaani"
              
         },
         {
@@ -90,7 +93,10 @@ export const DataProvider = ({children}) => {
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/ahalasmari.png"],
             "name": "Abdulrhman Alasmari",
             "position": "UI / UX",
-            "twitter_account": "abdulrhmanalasmari"
+            "twitter_account": "abdulrhmanalasmari",
+            "github_account": "abulrhman-asmari",
+            "instagram_account": "asmari00",
+            "code_account": "alasmari"
 
              
         },
@@ -99,7 +105,10 @@ export const DataProvider = ({children}) => {
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/asazzahrani.png"],
             "name": "Abdullah Alzhrani",
             "position": "Team Leader of UI",
-            "twitter_account": "abdullahsal"
+            "twitter_account": "abdullahsal",
+            "github_account": "abdulsal",
+            "instagram_account": "abdullahsalem",
+            "code_account": "adulsal"
 
         }
     ])
