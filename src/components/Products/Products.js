@@ -3,7 +3,7 @@ import './Products.css'
 import {DataContext} from '../DataProvider'
 import {Link} from 'react-router-dom'
 import {Card, Row, Col, Carousel, Divider ,Pagination , Button} from 'antd'
-import {VatText, PriceText} from '../../styled'
+import {VatText, PriceText, StyleImg} from '../../styled'
 export default function Products() {
   const value = useContext(DataContext)
   const [products] = value.products
@@ -17,23 +17,24 @@ export default function Products() {
     objectFit: 'cover'
   };
   
+  
     return (
       <>
-          <Carousel autoplay >
+          <Carousel autoplay>
             <div>
-              <img alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1010-nvidia-laptops-en.jpg" />
+              <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1010-nvidia-laptops-en.jpg" />
             </div>
             <div>
-              <img alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1410-iphone12-pro-cs-en.jpg"/>
+              <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1410-iphone12-pro-cs-en.jpg"/>
             </div>
             <div>
-              <img alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1410-iphone12-cs-en.jpg" />
+              <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-1410-iphone12-cs-en.jpg" />
             </div>
             <div>
-              <img alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-0610-oppo-reno4-pro-5g-new-en.jpg" />
+              <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-0610-oppo-reno4-pro-5g-new-en.jpg" />
             </div>
             <div>
-              <img alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-2209-xbox-pre-order-en.jpg" />
+              <StyleImg alt="" src="https://www.jarir.com/media/wysiwyg/Saudi/MB/MB-ksa-2209-xbox-pre-order-en.jpg" />
             </div>
           </Carousel>
           <Divider>SPECIAL OFFER</Divider>

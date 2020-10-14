@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 
 /**Products Page Styled-components */
+export const StyleImg = styled.img`
+  width:auto;
+  height: 100%;
+  `
 export const VatText = styled.p`
     text-align:center;
     font-size: 5px; 
