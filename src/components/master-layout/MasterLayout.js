@@ -3,18 +3,20 @@ import { Layout, Menu, Badge } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import {DataContext} from '../DataProvider'
-import { ShoppingOutlined } from '@ant-design/icons';
+import { ShoppingOutlined, AppstoreOutlined , PhoneOutlined, MessageOutlined} from '@ant-design/icons';
 import Products from '../Products/Products'
-import ProductDetiles from '../ProductDetiles/ProductDetiles'
+import ProductDetiles from '../../components/Products/ProductDetiles/ProductDetiles'
 import Contact from '../Contact/Contact'
 import About from '../About/About'
 import Cart from '../Cart/Cart'
+import ProductsMangment from '../Products/ProductsMangment/ProductsMangment'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './MasterLayout.css'
 export default function MasterLayout() {
     const { Header, Content, Footer } = Layout;
     const value = useContext(DataContext)
     const [cart] = value.cart
+    const { SubMenu } = Menu;
     return (
         <div>
             <Router>
@@ -25,17 +27,20 @@ export default function MasterLayout() {
                             <h2 style={{color: "white"}}>TECHSHOP</h2>
                         </a>
                     </div>
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                    <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
-                    <Menu.Item key="2"><Link to="/contact">Contact</Link></Menu.Item>
-                    <Menu.Item key="3"><Link to="/about">About</Link></Menu.Item>
-                </Menu>
+                        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                            <SubMenu key="SubMenu" icon={<AppstoreOutlined />} title="Products">
+                                <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
+                                <Menu.Item key="2"><Link to="/productsMangment">Products Mangment</Link></Menu.Item>
+                            </SubMenu>
+                            <Menu.Item key="3"><Link to="/contact"><PhoneOutlined />Contact</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/about"><MessageOutlined />About</Link></Menu.Item>
+                        </Menu>
                     <div>
-                            <Link to="/cart">
-                                <Badge count={cart.length} >
-                                <ShoppingOutlined style={{fontSize: '35px'}}/>
-                                </Badge>
-                            </Link>
+                        <Link to="/cart">
+                            <Badge count={cart.length} >
+                            <ShoppingOutlined style={{fontSize: '35px'}}/>
+                            </Badge>
+                        </Link>
                     </div>
                 </Header>
                     <Content style={{ padding: '0 50px' }}>
@@ -45,6 +50,7 @@ export default function MasterLayout() {
                             <Route path="/Contact" component={Contact} />
                             <Route path="/About" component={About} />
                             <Route path="/Cart" component={Cart} />
+                            <Route path="/ProductsMangment" component={ProductsMangment} />
                         </div>
                     </Content>
                 <Footer style={{ textAlign: 'center'}}>
