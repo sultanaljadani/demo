@@ -3,7 +3,7 @@ import { Layout, Menu, Badge } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import {DataContext} from '../DataProvider'
-import { ShoppingOutlined, AppstoreOutlined , PhoneOutlined, MessageOutlined} from '@ant-design/icons';
+import { ShoppingOutlined } from '@ant-design/icons';
 import Products from '../Products/Products'
 import ProductDetiles from '../../components/Products/ProductDetiles/ProductDetiles'
 import Contact from '../Contact/Contact'
@@ -28,12 +28,12 @@ export default function MasterLayout() {
                         </a>
                     </div>
                         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                            <SubMenu key="SubMenu" icon={<AppstoreOutlined />} title="Products">
+                            <SubMenu key="SubMenu" title="Store">
                                 <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
                                 <Menu.Item key="2"><Link to="/productsMangment">Products Mangment</Link></Menu.Item>
                             </SubMenu>
-                            <Menu.Item key="3"><Link to="/contact"><PhoneOutlined />Contact</Link></Menu.Item>
-                            <Menu.Item key="4"><Link to="/about"><MessageOutlined />About</Link></Menu.Item>
+                            <Menu.Item key="3"><Link to="/contact">Contact</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/about">About</Link></Menu.Item>
                         </Menu>
                     <div>
                         <Link to="/cart">
