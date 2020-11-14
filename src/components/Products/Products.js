@@ -3,6 +3,7 @@ import './Products.css'
 import {DataContext} from '../DataProvider'
 import {Link} from 'react-router-dom'
 import {Card, Row, Col, Carousel, Divider ,Pagination , Button} from 'antd'
+import {ShoppingCartOutlined} from '@ant-design/icons'
 import {VatText, PriceText, StyleImg} from '../../styled'
 export default function Products() {
   const value = useContext(DataContext)
@@ -16,8 +17,6 @@ export default function Products() {
     display: 'block',
     objectFit: 'cover'
   };
-  
-  
     return (
       <>
           <Carousel autoplay effect="fade">
@@ -57,7 +56,7 @@ export default function Products() {
                         <PriceText> <small>SR</small>{product.price} </PriceText>
                         <VatText>inclusive of VAT</VatText>
                         <Button type="primary" onClick={() => addCart(product._id)} block>
-                          Add to card
+                        <ShoppingCartOutlined /> Add to card
                         </Button>
                     </Card>
                   </Col>
