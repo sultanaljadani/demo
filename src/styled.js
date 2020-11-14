@@ -1,5 +1,17 @@
 import styled from 'styled-components'
 
+ /**Master Layout Page styled-components */
+ export const StylHeader = styled.header`
+    background-color: #cccccc;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+`;
 
 /**Products Page Styled-components */
 export const StyleImg = styled.img`
@@ -16,3 +28,4 @@ export const VatText = styled.p`
     font-size: 20px; 
     color: red;
   `;
+ 
