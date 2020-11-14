@@ -1,0 +1,18 @@
+import styled from 'styled-components'
+
+
+/**Products Page Styled-components */
+export const StyleImg = styled.img`
+  width:auto;
+  height: 100%;
+  `
+export const VatText = styled.p`
+    text-align:center;
+    font-size: 10px; 
+    color: #979797;
+  `;
+ export const PriceText = styled.h4`
+    text-align:center;
+    font-size: 20px; 
+    color: red;
+  `;

@@ -1,7 +1,7 @@
 import React, {createContext, useState} from 'react'
 
 export const DataContext = createContext();
-export const DataProvider = (props) => {
+export const DataProvider = ({children}) => {
     const [products, setProducts] =  useState([
         {
             "_id":"1",
@@ -55,7 +55,25 @@ export const DataProvider = (props) => {
              "price": 299,
              "count": 1
 
-         }
+         },
+         {
+            "_id": "7",
+            "title": "Apple iPhone 5s",
+            "images": ["https://media.extra.com/i/aurora/00193195_100_02?w=400&h=400&img404=missing_product&v=false"],
+            "description": "iPhone 5s is powered by the custom-designed 64-bit A9 chip. It delivers performance once found only in desktop computers.",
+            "price": 199,
+            "count": 1
+
+        },
+        {
+            "_id": "8",
+            "title": "Apple iPhone 4s",
+            "images": ["https://media.extra.com/i/aurora/00193195_100_02?w=400&h=400&img404=missing_product&v=false"],
+            "description": "iPhone 4s is powered by the custom-designed 64-bit A9 chip. It delivers performance once found only in desktop computers.",
+            "price": 99,
+            "count": 1
+
+        }
     ])
     const [cart, setCart] = useState([])
     const [about, setAbout] = useState([
@@ -63,21 +81,35 @@ export const DataProvider = (props) => {
             "__id": "001",
             "image": ["https://drive.uqu.edu.sa/up/avatar/440/sjjadani.png"],
             "name": "Sultan Aljadani",
-            "position": "UI / UX"
+            "position": "UI / UX",
+            "twitter_account": "___7rb",
+            "github_account": "sultanaljadani",
+            "instagram_account": "2sa4",
+            "code_account": "sultanaljadaani"
              
         },
         {
             "__id": "002",
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/ahalasmari.png"],
             "name": "Abdulrhman Alasmari",
-            "position": "UI / UX"
+            "position": "UI / UX",
+            "twitter_account": "abdulrhmanalasmari",
+            "github_account": "abulrhman-asmari",
+            "instagram_account": "asmari00",
+            "code_account": "alasmari"
+
              
         },
         {
             "__id": "003",
             "image": ["https://drive.uqu.edu.sa/up/avatar/143/asazzahrani.png"],
             "name": "Abdullah Alzhrani",
-            "position": "Team Leader of UI" 
+            "position": "Team Leader of UI",
+            "twitter_account": "abdullahsal",
+            "github_account": "abdulsal",
+            "instagram_account": "abdullahsalem",
+            "code_account": "adulsal"
+
         }
     ])
     const addCart = (id) => {
@@ -97,12 +129,12 @@ export const DataProvider = (props) => {
         products:  [products, setProducts],
         cart: [cart, setCart],
         about: [about, setAbout],
-        addCart: addCart
+        addCart: addCart,
     }
     return (
         <div>
             <DataContext.Provider value={value}>
-                {props.children}
+                {children}
             </DataContext.Provider>
         </div>
     )

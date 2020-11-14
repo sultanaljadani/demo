@@ -1,4 +1,16 @@
-/*********************** Header ********************/
+.site-layout-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 280px;
+  }
+  #components-layout-demo-top .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
+  /*********************** Header ********************/
 header{
     width: 100%;
     min-height: 100px;
@@ -10,14 +22,7 @@ header{
     border-bottom: 1px solid #cccccc;
     margin-bottom: 20px;
   }
-  ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 0 15px;
-  }
-  .menu{
-    display: none;
-  }
+  
   .cart-icon{
     position: relative;
     margin-right: 15px;
