@@ -1,8 +1,7 @@
-import React ,{useContext} from 'react'
+import React from 'react'
 import { Layout, Menu, Badge  } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import {DataContext} from '../DataProvider'
 import { ShoppingOutlined } from '@ant-design/icons';
 import Products from '../Products/Products'
 import ProductDetiles from '../../components/Products/ProductDetiles/ProductDetiles'
@@ -14,8 +13,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './MasterLayout.css'
 export default function MasterLayout() {
     const {Header, Content, Footer } = Layout;
-    const value = useContext(DataContext)
-    const [cart] = value.cart
     const { SubMenu } = Menu;
     return (
         <div>
@@ -37,7 +34,7 @@ export default function MasterLayout() {
                         </Menu>
                     <div>
                         <Link to="/cart">
-                            <Badge count={cart.length} >
+                            <Badge  >
                             <ShoppingOutlined style={{fontSize: '35px'}}/>
                             </Badge>
                         </Link>
