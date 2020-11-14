@@ -65,7 +65,7 @@ export default function Products() {
               }
           </Row>
           <div className="center">
-            <Pagination defaultCurrent={1} total={8} defaultPageSize={4}/>
+            <Pagination defaultCurrent={1} total={15} defaultPageSize={6}/>
           </div>
     </>  
     )

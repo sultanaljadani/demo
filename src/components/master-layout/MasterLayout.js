@@ -1,5 +1,5 @@
 import React ,{useContext} from 'react'
-import { Layout, Menu, Badge } from 'antd';
+import { Layout, Menu, Badge  } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import {DataContext} from '../DataProvider'
@@ -12,14 +12,14 @@ import Cart from '../Cart/Cart'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './MasterLayout.css'
 export default function MasterLayout() {
-    const { Header, Content, Footer } = Layout;
+    const {Header, Content, Footer } = Layout;
     const value = useContext(DataContext)
     const [cart] = value.cart
     return (
         <div>
             <Router>
             <Layout className="layout">
-                <Header>
+                <Header theme="dark">
                     <div className="logo">
                         <a title="Home Page" href="/products">
                             <h2 style={{color: "white"}}>TECHSHOP</h2>
