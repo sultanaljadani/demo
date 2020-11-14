@@ -1,17 +1,17 @@
 import React from 'react';
-import {DataProvider} from './components/DataProvider'
+import {Provider} from 'react-redux'
 import MasterLayout from './components/master-layout/MasterLayout'
 import Products from './components/Products/Products'
 import './App.less';
-import 'moment/locale/zh-cn';
 import locale from 'antd/es/locale/zh_CN';
+import store from './redux/store'
 function App() {
   return (
-    <DataProvider locale={locale}>
+    <Provider locale={locale} store={store}>
         <MasterLayout>
           <Products />
         </MasterLayout>
-    </DataProvider>
+    </Provider>
   );
 }
 export default App;
