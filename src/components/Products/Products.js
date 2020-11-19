@@ -40,11 +40,10 @@ const Products = ({ products }) => {
               total={8} 
               defaultPageSize={10} 
               pageSize={4}/>
-          </div>
+      </div>
     </>
   );
 };
-
 const mapState = (state) => {
   return {
     products: state.shop.products,
