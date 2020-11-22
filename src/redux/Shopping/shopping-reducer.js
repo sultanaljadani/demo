@@ -75,42 +75,44 @@ export const INITIAL_STATE = {
         }
     ], //{id, title, des, price, img... etc}
     cart:[], //{id, title, des, price, img, Qty}
-    about:[
-        {
-            "__id": "001",
-            "image": ["https://drive.uqu.edu.sa/up/avatar/440/sjjadani.png"],
-            "name": "Sultan Aljadani",
-            "position": "UI / UX",
-            "twitter_account": "___7rb",
-            "github_account": "sultanaljadani",
-            "instagram_account": "2sa4",
-            "code_account": "sultanaljadaani"
-             
-        },
-        {
-            "__id": "002",
-            "image": ["https://drive.uqu.edu.sa/up/avatar/143/ahalasmari.png"],
-            "name": "Abdulrhman Alasmari",
-            "position": "UI / UX",
-            "twitter_account": "abdulrhmanalasmari",
-            "github_account": "abulrhman-asmari",
-            "instagram_account": "asmari00",
-            "code_account": "alasmari"
-
-             
-        },
-        {
-            "__id": "003",
-            "image": ["https://drive.uqu.edu.sa/up/avatar/143/asazzahrani.png"],
-            "name": "Abdullah Alzhrani",
-            "position": "Team Leader of UI",
-            "twitter_account": "abdullahsal",
-            "github_account": "abdulsal",
-            "instagram_account": "abdullahsalem",
-            "code_account": "adulsal"
-
-        }
+    _about: [
+      {
+        "__id": "001",
+        "image": ["https://drive.uqu.edu.sa/up/avatar/440/sjjadani.png"],
+        "name": "Sultan Aljadani",
+        "position": "UI / UX",
+        "twitter_account": "___7rb",
+        "github_account": "sultanaljadani",
+        "instagram_account": "2sa4",
+        "code_account": "sultanaljadaani"
+      },
+      {
+        "__id": "002",
+        "image": ["https://drive.uqu.edu.sa/up/avatar/143/ahalasmari.png"],
+        "name": "Abdulrhman Alasmari",
+        "position": "UI / UX",
+        "twitter_account": "abdulrhmanalasmari",
+        "github_account": "abulrhman-asmari",
+        "instagram_account": "asmari00",
+        "code_account": "alasmari"
+      },
+      {
+        "__id": "003",
+        "image": ["https://drive.uqu.edu.sa/up/avatar/143/asazzahrani.png"],
+        "name": "Abdullah Alzhrani",
+        "position": "Team Leader of UI",
+        "twitter_account": "abdullahsal",
+        "github_account": "abdulsal",
+        "instagram_account": "abdullahsalem",
+        "code_account": "adulsal"
+      }
     ],
+    get about() {
+      return this._about;
+    },
+    set about(value) {
+      this._about = value;
+    },
     currentItem: null,
 };
 const shopReducer = (state = INITIAL_STATE, action) => {
