@@ -28,9 +28,9 @@ const Products = ({ products }) => {
       <Divider>SPECIAL OFFER</Divider>
       <div>
         <Row align="middle" justify="space-around"  gutter="horizt">
-          { products.map((product) => ( 
-            <Col span={6} key={product._id} style={{padding: '15px'}}>
-              <Product key={product.id} product={product}/> 
+          { products.map((item) => ( 
+            <Col span={6} key={item._id} style={{padding: '15px'}}>
+              <Product key={item.id} product={item}/> 
             </Col>) ) }
         </Row>
       </div>
