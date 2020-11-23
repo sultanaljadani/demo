@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './MasterLayout.css'
 export default function MasterLayout() {
     const {Header, Content, Footer } = Layout;
-    const { SubMenu } = Menu;
+    // const { SubMenu } = Menu;
     return (
         <div>
             <Router>
@@ -25,17 +25,18 @@ export default function MasterLayout() {
                         </a>
                     </div>
                         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                            <SubMenu key="SubMenu" title="Store">
-                                <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
+                            {/* <SubMenu key="SubMenu" title="Store">
+                                
                                 <Menu.Item key="2"><Link to="/productsMangment">Products Mangment</Link></Menu.Item>
-                            </SubMenu>
-                            <Menu.Item key="3"><Link to="/contact">Contact</Link></Menu.Item>
-                            <Menu.Item key="4"><Link to="/about">About</Link></Menu.Item>
+                            </SubMenu> */}
+                            <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to="/contact">Contact</Link></Menu.Item>
+                            <Menu.Item key="3"><Link to="/about">About</Link></Menu.Item>
                         </Menu>
                     <div>
                         <Link to="/cart">
                             <Badge  >
-                            <ShoppingOutlined style={{fontSize: '35px'}}/>
+                            <ShoppingOutlined style={{fontSize: '35px'}} title="Cart"/>
                             </Badge>
                         </Link>
                     </div>
