@@ -1,20 +1,12 @@
-import React, { useContext} from 'react'
-import {useParams} from 'react-router-dom'
-import {DataContext} from '../DataProvider'
+import React from 'react'
 import { PageHeader, Tag, Button} from 'antd';
 import './ProductDetiles.css'
 import {VatText, PriceText} from '../../styled'
+import { connect } from "react-redux";
 
 
-export default function ProductDetiles({match}) {
-    const {id} = useParams();
-    const value = useContext(DataContext)
-    const [products] = value.products
-    const addCart = value.addCart
-    const productDetiles = products.filter((product) => {
-        return product._id === id 
-    } )
-    console.log(productDetiles)
+
+const ProductDetiles = ({ productDetiles }) => {
     return (
         <>
             <PageHeader
@@ -25,16 +17,16 @@ export default function ProductDetiles({match}) {
                  tags={<Tag color="blue">info</Tag>}
                 />
              {
-                 productDetiles.map(product => (
-                     <div className="products" key={product._id}>
-                     <div className="details" key={product._id}>
-                            <img src={product.images[0]} alt="Product01"/>
+                 productDetiles.map(item => (
+                     <div className="products" key={item._id}>
+                     <div className="details" key={item._id}>
+                            <img src={item.images[0]} alt="Product01"/>
                          <div className="box">
-                             <h2 title={product.title}>{product.title}</h2>
-                             <p>{product.description}</p>
-                             <PriceText> <small>SR</small>{product.price} </PriceText>
+                             <h2 title={item.title}>{item.title}</h2>
+                             <p>{item.description}</p>
+                             <PriceText> <small>SR</small>{item.price} </PriceText>
                              <VatText>inclusive of VAT</VatText>
-                             <Button type="primary" onClick={() => addCart(product._id)} block>
+                             <Button type="primary" onClick={() => addCart(item._id)} block>
                           Add to card
                         </Button>
                          </div>
@@ -46,3 +38,9 @@ export default function ProductDetiles({match}) {
         </>
     )
 }
+const mapState = (state) => {
+    return {
+        productDetiles: state.shop.products,
+    };
+  };
+  export default connect(mapState)(productDetiles);
