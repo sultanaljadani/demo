@@ -20,7 +20,7 @@ const Cart = ({ cart }) => {
         items += item.qty;
         price += item.qty * item.price;
       });
-  
+      
       setTotalItems(items);
       setTotalPrice(price);
     }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
