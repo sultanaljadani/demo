@@ -14,7 +14,7 @@ const gridStyle = {
     display: 'block',
     objectFit: 'cover'
   };
-const Product = ({ product, addToCart }) => {
+const Product = ({ product, addToCart , loadCurrentItem }) => {
   return (
     <>
                 <Card
@@ -22,17 +22,17 @@ const Product = ({ product, addToCart }) => {
                     hoverable
                     style={{ width: 'auto'}}
                     cover={
-                        <Link to={`/productDetiles/${product._id}`}>
-                            <img alt="example" src={product.images[0]}  style={gridStyle}/>
+                        <Link to={`/productDetiles/${product.id}`}>
+                            <img alt="example" src={product.images[0]}  style={gridStyle} onClick={() => loadCurrentItem(product)}/>
                         </Link>
                         }>
                             <Meta title={product.title} style={{textTransform: 'uppercase', letterSpacing: '2px'}}/>
                             <Meta description={product.description} /><br/>
                             <PriceText> <small>SR</small>{product.price} </PriceText>
                             <VatText>inclusive of VAT</VatText>
-                            <Button type="primary" onClick={() => addToCart(product._id)} block>
+                            <Button type="primary" onClick={() => addToCart(product.id)} block>
                                 <ShoppingCartOutlined /> Add to card
-                            </Button>
+                            </Button>                            
                 </Card>
     </>
   );

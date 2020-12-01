@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { ShoppingOutlined } from '@ant-design/icons';
 import Products from '../Products/Products'
-import ProductDetiles from '../../components/Products/ProductDetiles/ProductDetiles'
+import ProductDetiles from '../ProductDetiles/ProductDetiles'
 import Contact from '../Contact/Contact'
 import About from '../About/About'
 import Cart from '../Cart/Cart'

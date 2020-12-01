@@ -1,46 +1,43 @@
-import React from 'react'
-import { PageHeader, Tag, Button} from 'antd';
-import './ProductDetiles.css'
-import {VatText, PriceText} from '../../styled'
+import React from "react";
+import styles from "./ProductDetiles.module.css";
+
 import { connect } from "react-redux";
+import { addToCart } from "../../redux/Shopping/shopping-actions";
 
+const ProductDetiles = ({ current, addToCart }) => {
+  return (
+    <div className={styles.singleItem}>
+      <img
+        className={styles.singleItem__image}
+        src={current.images}
+        alt={current.title}
+      />
+      <div className={styles.singleItem__details}>
+        <p className={styles.details__title}>{current.title}</p>
+        <p className={styles.details__description}>{current.description}</p>
+        <p className={styles.details__price}>$ {current.price}</p>
 
+        <button
+          onClick={() => addToCart(current.id)}
+          className={styles.details__addBtn}
+        >
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  );
+};
 
-const ProductDetiles = ({ productDetiles }) => {
-    return (
-        <>
-            <PageHeader
-                 className="site-page-header"
-                 onBack={() => window.history.back()}
-                 title="Back"
-                 subTitle="Mobile Detils"
-                 tags={<Tag color="blue">info</Tag>}
-                />
-             {
-                 productDetiles.map(item => (
-                     <div className="products" key={item._id}>
-                     <div className="details" key={item._id}>
-                            <img src={item.images[0]} alt="Product01"/>
-                         <div className="box">
-                             <h2 title={item.title}>{item.title}</h2>
-                             <p>{item.description}</p>
-                             <PriceText> <small>SR</small>{item.price} </PriceText>
-                             <VatText>inclusive of VAT</VatText>
-                             <Button type="primary" onClick={() => addCart(item._id)} block>
-                          Add to card
-                        </Button>
-                         </div>
-                         
-                     </div>
-                     </div>
-                 ))
-             }
-        </>
-    )
-}
-const mapState = (state) => {
-    return {
-        productDetiles: state.shop.products,
-    };
+const mapStateToProps = (state) => {
+  return {
+    current: state.shop.currentItem,
   };
-  export default connect(mapState)(productDetiles);
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetiles);
