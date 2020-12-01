@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState, useEffect } from 'react'
 import { Layout, Menu, Badge  } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -11,9 +11,21 @@ import Cart from '../Cart/Cart'
 import ProductsMangment from '../Products/ProductsMangment/ProductsMangment'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './MasterLayout.css'
-export default function MasterLayout() {
+import { connect } from "react-redux";
+const MasterLayout = ({ cart }) => {
+    const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+
+    setCartCount(count);
+  }, [cart, cartCount]);
+
     const {Header, Content, Footer } = Layout;
-    // const { SubMenu } = Menu;
+    
     return (
         <div>
             <Router>
@@ -25,17 +37,13 @@ export default function MasterLayout() {
                         </a>
                     </div>
                         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                            {/* <SubMenu key="SubMenu" title="Store">
-                                
-                                <Menu.Item key="2"><Link to="/productsMangment">Products Mangment</Link></Menu.Item>
-                            </SubMenu> */}
                             <Menu.Item key="1"><Link to="/products">Products</Link></Menu.Item>
                             <Menu.Item key="2"><Link to="/contact">Contact</Link></Menu.Item>
                             <Menu.Item key="3"><Link to="/about">About</Link></Menu.Item>
                         </Menu>
                     <div>
                         <Link to="/cart">
-                            <Badge  >
+                            <Badge  count={cartCount}>
                             <ShoppingOutlined style={{fontSize: '35px'}} title="Cart"/>
                             </Badge>
                         </Link>
@@ -60,3 +68,10 @@ export default function MasterLayout() {
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return {
+      cart: state.shop.cart,
+    };
+  };
+  
+  export default connect(mapStateToProps)(MasterLayout);
