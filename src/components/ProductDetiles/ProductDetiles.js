@@ -1,11 +1,20 @@
 import React from "react";
 import styles from "./ProductDetiles.module.css";
-
+import {VatText, PriceText} from '../../styled'
+import { PageHeader, Tag, Button} from 'antd';
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/Shopping/shopping-actions";
 
 const ProductDetiles = ({ current, addToCart }) => {
   return (
+    <>
+    <PageHeader
+                 className="site-page-header"
+                 onBack={() => window.history.back()}
+                 title="Back"
+                 subTitle="Mobile Detils"
+                 tags={<Tag color="blue">info</Tag>}
+                />
     <div className={styles.singleItem}>
       <img
         className={styles.singleItem__image}
@@ -13,18 +22,16 @@ const ProductDetiles = ({ current, addToCart }) => {
         alt={current.title}
       />
       <div className={styles.singleItem__details}>
-        <p className={styles.details__title}>{current.title}</p>
+        <h2 className={styles.details__title}>{current.title}</h2>
         <p className={styles.details__description}>{current.description}</p>
-        <p className={styles.details__price}>$ {current.price}</p>
-
-        <button
-          onClick={() => addToCart(current.id)}
-          className={styles.details__addBtn}
-        >
-          Add To Cart
-        </button>
+        <PriceText> <small>SR</small>{current.price} </PriceText>
+        <VatText>inclusive of VAT</VatText>
+        <Button type="primary" onClick={() => addToCart(current.id)} block>
+          Add to card
+        </Button>
       </div>
     </div>
+    </>
   );
 };
 

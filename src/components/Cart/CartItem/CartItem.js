@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./CartItem.css";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
+import { DeleteOutlined } from '@ant-design/icons';
 import {
   adjustItemQty,
   removeFromCart,
@@ -15,36 +17,40 @@ const CartItem = ({ item, adjustQty, removeFromCart }) => {
   };
 
   return (
-    <div className={styles.cartItem}>
-      <img
-        className={styles.cartItem__image}
-        src={item.images}
-        alt={item.title}
-      />
-      <div className={styles.cartItem__details}>
-        <p className={styles.details__title}>{item.title}</p>
-        <p className={styles.details__desc}>{item.description}</p>
-        <p className={styles.details__price}>$ {item.price}</p>
-      </div>
-      <div className={styles.cartItem__actions}>
-        <div className={styles.cartItem__qty}>
-          <label htmlFor="qty">Qty</label>
-          <input
-            min="1"
-            type="number"
-            id="qty"
-            name="qty"
-            value={input}
-            onChange={onChangeHandler}
+    <div className="details-cart" key={item.id}>
+      <div className="img-cart">
+        <Link to={`/productDetiles/${item.id}`}>
+          <img
+            className={styles.cartItem__image}
+            src={item.images}
+            alt={item.title}
           />
-        </div>
-        <button
-          onClick={() => removeFromCart(item.id)}
-          className={styles.actions__deleteItemBtn}
-        >
-          Delete
-        </button>
+        </Link>
       </div>
+      
+      <div className="box-details-cart">
+        <h2 title={item.title}>{item.title}</h2>
+        <h3>$ {item.price}</h3>
+        <p>{item.description}</p>
+      </div>
+      <div className="cartItem__actions">
+          <div className="cartItem__qty">
+            <label htmlFor="qty">Qty</label>
+            <input
+              min="1"
+              type="number"
+              id="qty"
+              name="qty"
+              value={input}
+              onChange={onChangeHandler}
+            />
+          </div>
+      </div>
+      <div className="box-delete-cart">
+          <div className="delete-cart" onClick={() => removeFromCart(item.id)} title="Delete product">
+            <DeleteOutlined style={{fontSize:"20px"}}/>
+          </div>
+        </div>
     </div>
   );
 };

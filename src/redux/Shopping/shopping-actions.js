@@ -1,4 +1,5 @@
 import * as actionTypes from './shopping-types';
+import { message } from 'antd';
 
 export const addToCart = (itemID) => {
   return {
@@ -10,12 +11,21 @@ export const addToCart = (itemID) => {
 };
 
 export const removeFromCart = (itemID) => {
+  message.success({
+    content: 'Product has been deleted !',
+    className: 'custom-class',
+    style: {
+      marginTop: '20vh',
+    },
+  });
   return {
     type: actionTypes.REMOVE_FROM_CART,
     payload: {
       id: itemID,
     },
+    
   };
+  
 };
 
 export const adjustItemQty = (itemID, qty) => {

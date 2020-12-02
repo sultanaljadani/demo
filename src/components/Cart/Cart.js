@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from './Cart.css'
+import './Cart.css'
 import CartItem from './CartItem/CartItem';
-// import { Link } from 'react-router-dom'
+import {VatText} from '../../styled'
 import { connect } from "react-redux";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
-// import { DeleteOutlined } from '@ant-design/icons';
-// import { Tag } from 'antd';
+import { Button } from 'antd';
 
 const Cart = ({ cart }) => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -24,23 +21,25 @@ const Cart = ({ cart }) => {
       setTotalItems(items);
       setTotalPrice(price);
     }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
+    if(cart.length === 0)
+        return <h2  className="cart-alert">Cart is Empty</h2>
   
     return (
-        <div className={styles.cart}>
-        <div className={styles.cart__items}>
+        <div className="cart">
+        <div className="cart__items">
           {cart.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
         </div>
-        <div className={styles.cart__summary}>
-          <h4 className={styles.summary__title}>Cart Summary</h4>
-          <div className={styles.summary__price}>
-            <span>TOTAL: ({totalItems} items)</span>
+        <div className="cart__summary">
+          <h4 className="summary__title">Cart Summary</h4>
+          <div className="summary__price">
+            <span>TOTAL: ({totalItems} items)<br/><VatText>inclusive of VAT</VatText> </span> 
             <span>$ {totalPrice}</span>
           </div>
-          <button className={styles.summary__checkoutBtn}>
+          <Button className="summary__checkoutBtn" type="primary">
             Checkout
-          </button>
+          </Button>
         </div>
       </div>
     );
